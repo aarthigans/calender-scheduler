@@ -4,7 +4,7 @@ $(document).ready(function () {
     e.innerHTML = t;
     
     var a = moment().format("HH");
-    $("#clearFieldsBtn").click(function (t) {
+    $("#clearBtn").click(function (t) {
       t.preventDefault, $("textarea").val(""), localStorage.clear();
     }),
       $(".time-div").each(function () {
