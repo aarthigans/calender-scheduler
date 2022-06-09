@@ -11,4 +11,4 @@ Url link: https://aarthigans.github.io/calender-scheduler/Develop/
 6. Included the js file with the logic to execute the calender scheduler page
 7. css is already done in the super disco repo
 
-![project screenshot] (https://github.com/aarthigans/calender-scheduler/blob/main/Develop/images/schedule.png)
+![project screenshot](https://github.com/aarthigans/calender-scheduler/blob/main/Develop/images/schedule.png)
