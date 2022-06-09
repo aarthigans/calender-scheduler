@@ -12,26 +12,21 @@ $(document).ready(function () {
     // Applying classes to the past, present and future time
     $(".time-div").each(function () {
       var hourel = $(this).attr("id").split("-")[1];
-
-      //if timeblock == id, make it as current time and add text as white class
-      timeBlock == hourel
-        ? ($(this).addClass("present"),
-          $(this).children(".description").addClass("text-white"))
-       
-      //if timeblock < hourel, add the class future and remove the present class
-          : timeBlock < hourel
-        ? ($(this).removeClass("present"), $(this).addClass("future"))
-       
-              //if hourel < timeblock, add the class future and remove the present class
-        : hourel < timeBlock &&
-          ($(this).removeClass("future"), $(this).addClass("past"));
+      if (timeBlock == hourel) {
+        $(this).addClass("present"),
+          $(this).children(".description").addClass("present");
+      } else if (timeBlock < hourel) {
+        $(this).removeClass("present"), $(this).addClass("future");
+      } else {
+        $(this).removeClass("future"), $(this).addClass("past");
+      }
     }),
     // save button functionality
     $(".saveBtn").click(function (hourel) {
       hourel.preventDefault();
-      var e = $(this).siblings(".time-block").val(),
+      var el = $(this).siblings(".time-block").val(),
         hourel = $(this).parent().attr("id").split("-")[1];
-      localStorage.setItem(hourel, e);
+      localStorage.setItem(hourel, el);
     }),
     $("#hour-09 .time-block").val(localStorage.getItem("09")),
     $("#hour-10 .time-block").val(localStorage.getItem("10")),
